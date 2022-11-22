@@ -1,9 +1,18 @@
-function NewToDo (){
+import React from 'react'
+import { useRef } from 'react';
+
+function NewToDo ({addTodo}){
+    const inputRef = useRef();
+
+    const handleClick = () => {
+        const inputElement = inputRef.current;
+        addTodo(inputElement.value);    
+    }
     return (
-        <form>
-            <input type="text" placeholder="Search..."></input>
-            <button>Add To Do</button>
-        </form>
+        <div>
+            <input type="text" ref={inputRef}  placeholder="Search..."></input>
+            <button onClick={handleClick}>Add To Do</button>
+        </div>
     );
 }
 

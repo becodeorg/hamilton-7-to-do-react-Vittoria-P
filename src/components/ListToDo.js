@@ -1,16 +1,17 @@
-function ListToDo (){
-    return (
-        <div>
-            <div>
-                <input type="checkbox" id="scales" name="scales" checked></input>
-                <label for="scales">Learn React</label>
-            </div>
+import React from 'react'
 
-            <div>
-                <input type="checkbox" id="horns" name="horns"></input>
-                <label for="horns">Be Awesome !</label>
-            </div>  
-        </div>  
+function ListToDo ({todos}){
+    return (
+        <ul>
+            {todos.map(todo => (
+                <li key={todo.id} >
+                    <input name="checkbox" type="checkbox" /> 
+                    <label htmlFor="checkbox">
+                        {todo.title}
+                    </label>
+                </li>
+            ))}
+        </ul>
     );
 }
 

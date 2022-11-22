@@ -1,6 +1,8 @@
+import React from 'react'
+
 function Header (){
     return (
-        <h1>My Todo App</h1>
+        <h1 className="text-blue">My Todo App</h1>
     )
 }
 
